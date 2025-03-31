@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, CardContent } from "./ui/card";
 
 const assignments = [
   {
@@ -22,23 +23,39 @@ const assignments = [
     progress: 38,
     students: 47,
   },
+  {
+    title: "Drawing 3D Illustration with Motion on Blender Software",
+    status: "In Progress",
+    score: 100,
+    progress: 38,
+    students: 47,
+  },
+  {
+    title: "Drawing 3D Illustration with Motion on Blender Software",
+    status: "In Progress",
+    score: 100,
+    progress: 38,
+    students: 47,
+  },
+  {
+    title: "Drawing 3D Illustration with Motion on Blender Software",
+    status: "In Progress",
+    score: 100,
+    progress: 38,
+    students: 47,
+  },
 ];
 
 const Assignment = () => {
   return (
-    //   <div className="bg-white shadow-lg p-4 rounded-lg">
-    //   <h2 className="text-lg font-semibold">Student's Assignment</h2>
-    //   <div className="mt-4">
-    //     {/* Assignment items will go here */}
-
-    //   </div>
-    // </div>
-
-    <div className=" bg-white p-4 shadow-md rounded-lg">
-      <div className="flex justify-between mb-2">
+  <Card>
+    {/* Fixed Header */}
+     <div className="flex justify-between mb-2 p-2">
         <h2 className="text-xl font-bold">Student’s Assignment</h2>
         <span className="text-blue-500 cursor-pointer">View All</span>
       </div>
+
+<div className="overflow-y-auto max-h-120 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100 mt-2 p-2">
       {assignments.map((assignment, index) => (
         <div key={index} className="border-b pb-4 mb-4">
           <div className="flex justify-between">
@@ -70,6 +87,9 @@ const Assignment = () => {
         </div>
       ))}
     </div>
+  </Card>
+
+   
   );
 };
 

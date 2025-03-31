@@ -22,7 +22,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`fixed top-0 left-0 h-screen bg-black text-white w-64 p-5 h-[calc(100vh-60px)] overflow-y-auto space-y-3 transition-transform  duration-300 ${
+        className={`fixed top-0 left-0 h-screen bg-black text-white w-64 p-5  overflow-y-auto space-y-3 transition-transform  duration-300 ${
           SidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:relative lg:w-64`}
       >

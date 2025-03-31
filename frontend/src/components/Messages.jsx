@@ -23,6 +23,9 @@ const Messages = () => {
             { name: "Drew Boys", time: "08:30", image: "/user4.jpg" },
             { name: "Tobey Makuise", time: "08:01", image: "/user5.jpg" },
             { name: "Steve Nono", time: "07:30", image: "/user6.jpg" },
+            { name: "Drew Boys", time: "08:30", image: "/user4.jpg" },
+            { name: "Tobey Makuise", time: "08:01", image: "/user5.jpg" },
+            { name: "Steve Nono", time: "07:30", image: "/user6.jpg" },
           ].map((msg, index) => (
             <div
               key={index}

@@ -1,13 +1,16 @@
 {
-  "name": "frontend",
+  "name": "MySchool",
   "private": true,
+  "description": "MySchool management app",
   "version": "0.0.0",
+  "author": "Omotuwa Ojo",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite --port 5173"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.12",
@@ -16,7 +19,13 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.3.0",
-    "tailwindcss": "^4.0.12"
+    "react-toastify": "^11.0.5",
+    "redux": "^5.0.1",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.0.12",
+    "toast": "^0.5.4",
+    "toastify": "^2.0.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

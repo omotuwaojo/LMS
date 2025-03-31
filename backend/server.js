@@ -6,21 +6,44 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const scheduleRoutes = require("./routes/scheduleRoutes.js");
 
-dotenv.config();
-connectDB();
+dotenv.config({
+    path: "./.env"
+});
 
 const app = express();
 const server = http.createServer(app);
 // const io = new Server(server, { cors: { origin: "*" } });
 
-app.use(cors());
-app.use(express.json());
+app.use(
+    cors({
+        origin: process.env.CORS_ORIGIN,
+        credentials: true
+})
+);
+
+//middleware
+app.use(express.json({limit: "16kb"}));
+app.use(express.urlencoded({ extended: true, limit: "16kb"}));
+app.use(express.static("public"));
 
 
 // app.use("/api/schedules", scheduleRoutes);
 
+
+//port and database conection
 const port = process.env.PORT || 3000;
-server.listen(port, () => console.log(`Server running on port: ${port}`));
+
+
+connectDB()
+.then(() => {
+    server.listen(port, () => {
+        console.log(`Server running on port: ${port}`)
+    });
+})
+.catch((err) => {
+    console.log("Mongodb connection error", err)
+});
+
 
 // export { io };
 module.exports = app;
