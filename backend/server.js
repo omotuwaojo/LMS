@@ -4,7 +4,7 @@ const { Server } = require("socket.io");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const scheduleRoutes = require("./routes/scheduleRoutes.js");
+
 
 dotenv.config({
     path: "./.env"
@@ -21,18 +21,21 @@ app.use(
 })
 );
 
+
 //middleware
 app.use(express.json({limit: "16kb"}));
 app.use(express.urlencoded({ extended: true, limit: "16kb"}));
 app.use(express.static("public"));
 
 
-// app.use("/api/schedules", scheduleRoutes);
+// import routes
+const healthcheckRouter = require("./routes/healthcheckRoutes.js")
 
+// routes
+app.use(healthcheckRouter);
 
 //port and database conection
 const port = process.env.PORT || 3000;
-
 
 connectDB()
 .then(() => {
