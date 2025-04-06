@@ -109,12 +109,12 @@ const Schedule = () => {
     // </Card>
 
     <div className="p-4 bg-white rounded-lg shadow-lg">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+      <div className="flex items-center justify-between ">
+        <div className="flex items-center space-x-2 ">
           <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full">
             <FaChevronLeft />
           </button>
-          <div className="flex space-x-2 overflow-x-auto">
+          <div className="flex space-x-2 overflow-x-auto scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100 ">
             {scheduleData.map((item) => (
               <div
                 key={item.date}

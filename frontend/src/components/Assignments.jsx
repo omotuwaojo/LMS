@@ -50,7 +50,7 @@ const Assignment = () => {
   return (
   <Card>
     {/* Fixed Header */}
-     <div className="flex justify-between mb-2 p-2">
+     <div className="flex justify-between border-b mb-2 p-2">
         <h2 className="text-xl font-bold">Student’s Assignment</h2>
         <span className="text-blue-500 cursor-pointer">View All</span>
       </div>
