@@ -24,14 +24,14 @@ const Schedule = () => {
   //   ];
 
   const scheduleData = [
-    { date: "17", day: "Saturday", classes: 2 },
+    { date: "17", day: "Sunday", classes: 2 },
     { date: "19", day: "Monday", classes: 3 },
-    { date: "19", day: "Tuesday", classes: 5 },
-    { date: "20", day: "Wednesday", classes: 6, active: true },
-    { date: "21", day: "Thursday", classes: 3 },
-    { date: "22", day: "Friday", classes: 3 },
-    { date: "21", day: "Thursday", classes: 3 },
-    { date: "22", day: "Friday", classes: 3 },
+    { date: "20", day: "Tuesday", classes: 5 },
+    { date: "21", day: "Wednesday", classes: 6, active: true },
+    { date: "22", day: "Thursday", classes: 3 },
+    { date: "23", day: "Friday", classes: 3 },
+    { date: "24", day: "Saturday", classes: 3 },
+    // { date: "22", day: "Saturday", classes: 3 },
   ];
 
   const classData = {
@@ -114,7 +114,7 @@ const Schedule = () => {
           <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full">
             <FaChevronLeft />
           </button>
-          <div className="flex space-x-2 overflow-x-auto scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100 ">
+          <div className="flex space-x-2 overflow-x-auto">
             {scheduleData.map((item) => (
               <div
                 key={item.date}
