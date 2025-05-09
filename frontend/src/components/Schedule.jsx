@@ -113,7 +113,7 @@ const Schedule = () => {
           <button onClick={handlePrev} className="p-2 bg-gray-200 rounded-full">
             <FaChevronLeft />
           </button>
-          <div className="flex space-x-2  ">
+          <div className="flex space-x-2 overflow-x-auto">
             {scheduleData.map((item) => (
               <div
                 key={item.date}

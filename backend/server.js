@@ -1,12 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require("express-rate-limit");
-// const mongooseSantinizer = require('mongoose-sanitizer');
+// const mongooseSantinizer = require('');
 const helmet = require('helmet');
 const http = require("http");
 const { Server } = require("socket.io");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const cookieParser = require("cookie-parser")
 const connectDB = require("./config/db");
 
 
@@ -50,6 +51,7 @@ if(process.env.NODE_ENV === "development") {
 app.use(express.json({limit: "10kb"}));
 app.use(express.urlencoded({ extended: true, limit: "10kb"}));
 app.use(express.static("public"));
+app.use(cookieParser());
 
 
 // Global Error Handler
@@ -66,9 +68,11 @@ app.use((err, req, res, next) => {
 
 // import routes
 const healthcheckRouter = require("./routes/healthcheckRoutes.js")
+const authRouter = require("./routes/authRoutes.js")
 
 // routes
 app.use(healthcheckRouter);
+app.use(authRouter);
 
 
 
