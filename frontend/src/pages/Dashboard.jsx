@@ -19,13 +19,13 @@ const Dashboard = () => {
         </div>
       </div> */}
       {/* Main Content */}
-      <div className="flex-1 p-6 overflow-auto ">
+      <div className="flex-1  overflow-y-auto p-6">
         <div className="grid grid-cols-12 gap-4">
           {/* Class Schedule - Takes more space */}
           <div className="col-span-12">
             <TopBar />
           </div>
-          <div className="col-span-8">
+          <div className="col-span-8 ">
             <Schedule />
           </div>
 
